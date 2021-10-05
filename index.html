@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日鳥翻訳機</title>
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        textarea {
+            resize: none;
+            width:90%;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <label for="story">ひらがな:</label><br>
+    <textarea id="hira">じゃがいめ</textarea><br><br>
+    <input type="button" value="ひらがな→鳥場語"onclick="fortoribago()">
+    <input type="button" value="鳥場語→ひらがな"onclick=""><br><br>
+    <label for="story">鳥場語:</label><br>
+    <textarea id="tori">ヒ可井目</textarea><br><br>
+    <script>
+        let tori=""
+        function fortoribago(){
+            let hiradata=document.getElementById("hira").value
+            let newhiradata=hiradata.split("")
+            console.log(newhiradata)
+            let i=0
+            tori=""
+            for(i=0;i<newhiradata.length;i++){
+                if(newhiradata[i]=="あ"||newhiradata[i]=="ぁ"){
+                    tori+="了"
+                }else if(newhiradata[i]=="い"||newhiradata[i]=="ぃ"){
+                    tori+="井"
+                }else if(newhiradata[i]=="う"||newhiradata[i]=="ぅ"){
+                    tori+="云"
+                }else if(newhiradata[i]=="え"||newhiradata[i]=="ぇ"){
+                    tori+="干"
+                }else if(newhiradata[i]=="お"||newhiradata[i]=="ぉ"){
+                    tori+="央"
+                }else if(newhiradata[i]=="か"||newhiradata[i]=="が"){
+                    tori+="可"
+                }else if(newhiradata[i]=="き"||newhiradata[i]=="ぎ"){
+                    tori+="月"
+                }else if(newhiradata[i]=="く"||newhiradata[i]=="ぐ"){
+                    tori+="弓"
+                }else if(newhiradata[i]=="け"||newhiradata[i]=="げ"){
+                    tori+="下"
+                }else if(newhiradata[i]=="こ"||newhiradata[i]=="ご"){
+                    tori+="合"
+                }else if(newhiradata[i]=="じ"||newhiradata[i]=="ち"||newhiradata[i]=="ぢ"||newhiradata[i]=="ず"||newhiradata[i]=="ぜ"||newhiradata[i]=="ぞ"){
+                    if(newhiradata[i+1]=="ゃ"){
+                        tori+="ヒ"
+                        i+=1
+                    }else if(newhiradata[i+1]=="ゅ"){
+                        tori+="木"
+                        i+=1
+                    }else if(newhiradata[i+1]=="ぇ"){
+                        tori+="上"
+                        i+=1
+                    }else if(newhiradata[i+1]=="ょ"){
+                        tori+="才"
+                        i+=1
+                    }else if(newhiradata[i]=="ず"){
+                        tori+="木"
+                    }else if(newhiradata[i]=="ぜ"){
+                        tori+="上"
+                    }else if(newhiradata[i]=="ぞ"){
+                        tori+="才"
+                    }else{
+                        tori+="土"
+                    }
+                }else if(newhiradata[i]=="だ"){
+                    tori+="大"
+                }else if(newhiradata[i]=="で"){
+                    tori+="手"
+                }else if(newhiradata[i]=="ど"){
+                    tori+="出"
+                }else if(newhiradata[i]=="さ"){
+                    tori+="左"
+                }else if(newhiradata[i]=="し"||newhiradata[i]=="ち"){
+                    tori+="山"
+                }else if(newhiradata[i]=="す"||newhiradata[i]=="つ"){
+                    tori+="水"
+                }else if(newhiradata[i]=="せ"){
+                    tori+="正"
+                }else if(newhiradata[i]=="そ"){
+                    tori+="生"
+                }else if(newhiradata[i]=="た"){
+                    tori+="田"
+                }else if(newhiradata[i]=="て"){
+                    tori+="丁"
+                }else if(newhiradata[i]=="な"){
+                    tori+="中"
+                }else if(newhiradata[i]=="に"){
+                    tori+="日"
+                }else if(newhiradata[i]=="ぬ"){
+                    tori+="幺"
+                }else if(newhiradata[i]=="ね"){
+                    tori+="金"
+                }else if(newhiradata[i]=="の"){
+                    tori+="内"
+                }else if(newhiradata[i]=="ま"){
+                    tori+="門"
+                }else if(newhiradata[i]=="み"){
+                    tori+="右"
+                }else if(newhiradata[i]=="む"){
+                    tori+="ム"
+                }else if(newhiradata[i]=="め"){
+                    tori+="目"
+                }else if(newhiradata[i]=="も"){
+                    tori+="未"
+                }else if(newhiradata[i]=="わ"){
+                    tori+="禾"
+                }else if(newhiradata[i]=="を"){
+                    tori+="力"
+                }else if(newhiradata[i]=="ん"){
+                    tori+="ん"
+                }else if(newhiradata[i]=="ら"){
+                    tori+="皿"
+                }else if(newhiradata[i]=="り"){
+                    tori+="八"
+                }else if(newhiradata[i]=="る"){
+                    tori+="ル"
+                }else if(newhiradata[i]=="れ"){
+                    tori+="里"
+                }else if(newhiradata[i]=="ろ"){
+                    tori+="令"
+                }else if(newhiradata[i]=="は"||newhiradata[i]=="ば"||newhiradata[i]=="ぱ"){
+                    tori+="勿"
+                }else if(newhiradata[i]=="ひ"||newhiradata[i]=="び"||newhiradata[i]=="ぴ"){
+                    tori+="女"
+                }else if(newhiradata[i]=="ふ"||newhiradata[i]=="ぶ"||newhiradata[i]=="ぷ"){
+                    tori+="夫"
+                }else if(newhiradata[i]=="へ"||newhiradata[i]=="べ"||newhiradata[i]=="ぺ"){
+                    tori+="乙"
+                }else if(newhiradata[i]=="ほ"||newhiradata[i]=="ぼ"||newhiradata[i]=="ぽ"){
+                    tori+="米"
+                }else if(newhiradata[i]=="や"||newhiradata[i]=="ゃ"){
+                    tori+="ヤ"
+                }else if(newhiradata[i]=="ゆ"||newhiradata[i]=="ゅ"){
+                    tori+="夕"
+                }else if(newhiradata[i]=="よ"||newhiradata[i]=="ょ"){
+                    tori+="予"
+                }else if(newhiradata[i]=="っ"){
+                    tori+=""
+                }
+                else{
+                    tori+=newhiradata[i]
+                }
+            }
+            console.log(tori)
+            document.getElementById("tori").value=tori
+        }
+    </script>
+</body>
+</html>
