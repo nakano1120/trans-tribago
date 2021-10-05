@@ -20,7 +20,7 @@
     <label for="story">ひらがな:</label><br>
     <textarea id="hira">じゃがいめ</textarea><br><br>
     <input type="button" value="ひらがな→鳥場語"onclick="fortoribago()">
-    <input type="button" value="鳥場語→ひらがな"onclick=""><br><br>
+    <input type="button" value="鳥場語→ひらがな"onclick="forhiragana()"><br><br>
     <label for="story">鳥場語:</label><br>
     <textarea id="tori">ヒ可井目</textarea><br><br>
     <script>
@@ -28,7 +28,6 @@
         function fortoribago(){
             let hiradata=document.getElementById("hira").value
             let newhiradata=hiradata.split("")
-            console.log(newhiradata)
             let i=0
             tori=""
             for(i=0;i<newhiradata.length;i++){
@@ -52,7 +51,7 @@
                     tori+="下"
                 }else if(newhiradata[i]=="こ"||newhiradata[i]=="ご"){
                     tori+="合"
-                }else if(newhiradata[i]=="じ"||newhiradata[i]=="ち"||newhiradata[i]=="ぢ"||newhiradata[i]=="ず"||newhiradata[i]=="ぜ"||newhiradata[i]=="ぞ"){
+                }else if(newhiradata[i]=="じ"||newhiradata[i]=="ち"||newhiradata[i]=="ぢ"||newhiradata[i]=="ざ"||newhiradata[i]=="ず"||newhiradata[i]=="ぜ"||newhiradata[i]=="ぞ"){
                     if(newhiradata[i+1]=="ゃ"){
                         tori+="ヒ"
                         i+=1
@@ -65,6 +64,8 @@
                     }else if(newhiradata[i+1]=="ょ"){
                         tori+="才"
                         i+=1
+                    }else if(newhiradata[i]=="ざ"){
+                        tori+="ヒ"
                     }else if(newhiradata[i]=="ず"){
                         tori+="木"
                     }else if(newhiradata[i]=="ぜ"){
@@ -155,6 +156,125 @@
             }
             console.log(tori)
             document.getElementById("tori").value=tori
+        }
+        function forhiragana(){
+            let toridata=document.getElementById("tori").value
+            let newtoridata=toridata.split("")
+            let l=0
+            hira=""
+            for(l=0;i<newtoridata.length;i++){
+                if(newtoridata[i]=="了"){
+                    hira+="あ"
+                }else if(newtoridata[i]=="井"){
+                    hira+="い"
+                }else if(newtoridata[i]=="云"){
+                    hira+="う"
+                }else if(newtoridata[i]=="干"){
+                    hira+="え"
+                }else if(newtoridata[i]=="央"){
+                    hira+="お"
+                }else if(newtoridata[i]=="可"){
+                    hira+="が"
+                }else if(newtoridata[i]=="月"){
+                    hira+="ぎ"
+                }else if(newtoridata[i]=="弓"){
+                    hira+="ぐ"
+                }else if(newtoridata[i]=="下"){
+                    hira+="げ"
+                }else if(newtoridata[i]=="合"){
+                    hira+="ご"
+                }else if(newtoridata[i]=="ヒ"){
+                    hira+="じゃ"
+                }else if(newtoridata[i]=="土"){
+                    hira+="じ"
+                }else if(newtoridata[i]=="木"){
+                    hira+="じゅ"
+                }else if(newtoridata[i]=="上"){
+                    hira+="じぇ"
+                }else if(newtoridata[i]=="才"){
+                    hira+="じょ"
+                }else if(newtoridata[i]=="大"){
+                    hira+="だ"
+                }else if(newtoridata[i]=="手"){
+                    hira+="で"
+                }else if(newtoridata[i]=="出"){
+                    hira+="ど"
+                }else if(newtoridata[i]=="左"){
+                    hira+="さ"
+                }else if(newtoridata[i]=="山"){
+                    hira+="し"
+                }else if(newtoridata[i]=="水"){
+                    hira+="す"
+                }else if(newtoridata[i]=="正"){
+                    hira+="せ"
+                }else if(newtoridata[i]=="生"){
+                    hira+="そ"
+                }else if(newtoridata[i]=="田"){
+                    hira+="た"
+                }else if(newtoridata[i]=="小"){
+                    hira+="て"
+                }else if(newtoridata[i]=="丁"){
+                    hira+="と"
+                }else if(newtoridata[i]=="中"){
+                    hira+="な"
+                }else if(newtoridata[i]=="日"){
+                    hira+="に"
+                }else if(newtoridata[i]=="幺"){
+                    hira+="ぬ"
+                }else if(newtoridata[i]=="金"){
+                    hira+="ね"
+                }else if(newtoridata[i]=="内"){
+                    hira+="の"
+                }else if(newtoridata[i]=="門"){
+                    hira+="ま"
+                }else if(newtoridata[i]=="右"){
+                    hira+="み"
+                }else if(newtoridata[i]=="ム"){
+                    hira+="む"
+                }else if(newtoridata[i]=="目"){
+                    hira+="め"
+                }else if(newtoridata[i]=="未"){
+                    hira+="も"
+                }else if(newtoridata[i]=="禾"){
+                    hira+="わ"
+                }else if(newtoridata[i]=="火"){
+                    hira+="うぃ"
+                }else if(newtoridata[i]=="川"){
+                    hira+="うぇ"
+                }else if(newtoridata[i]=="力"){
+                    hira+="を"
+                }else if(newtoridata[i]=="ん"){
+                    hira+="ん"
+                }else if(newtoridata[i]=="皿"){
+                    hira+="ら"
+                }else if(newtoridata[i]=="八"){
+                    hira+="り"
+                }else if(newtoridata[i]=="ル"){
+                    hira+="る"
+                }else if(newtoridata[i]=="里"){
+                    hira+="れ"
+                }else if(newtoridata[i]=="令"){
+                    hira+="ろ"
+                }else if(newtoridata[i]=="勿"){
+                    hira+="ば"
+                }else if(newtoridata[i]=="女"){
+                    hira+="び"
+                }else if(newtoridata[i]=="夫"){
+                    hira+="ぶ"
+                }else if(newtoridata[i]=="乙"){
+                    hira+="べ"
+                }else if(newtoridata[i]=="米"){
+                    hira+="ぼ"
+                }else if(newtoridata[i]=="ヤ"){
+                    hira+="や"
+                }else if(newtoridata[i]=="夕"){
+                    hira+="ゆ"
+                }else if(newtoridata[i]=="予"){
+                    hira+="よ"
+                }else{
+                    tori+=newhiradata[i]
+                }
+            }
         }
     </script>
 </body>
